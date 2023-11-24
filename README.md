@@ -15,7 +15,7 @@ Simple as that.
 ## How to Install?
 First of all. Playnite setup. Disable the Import of Uninstalled Games on your Librarys. After that Refresh the Library once with every SD Card you have so that you have all the Games in one Database.
 
-Create a Subfolder called "MicroSDInstallStatusUpdater" in your Playnites Extension folder and Drop everything from the downloaded .zip into it.
+Drop the Folder from the downloaded .zip into the Extension Folder of Playnite.
 That's it. No more Settings. If your Device uses the "SDXC Card" Model Name for the Device, it should work!
 You will see only those Games whos Install Directory is Reachable at the Moment once you switch SD Cards.
 
