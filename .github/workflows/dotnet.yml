@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: BUILD
-          path: "D:\a\MicroSDInstallStatusUpdater\MicroSDInstallStatusUpdater\bin\Release\"
+          path: "D:\\a\\MicroSDInstallStatusUpdater\\MicroSDInstallStatusUpdater\\bin\\Release\\"
