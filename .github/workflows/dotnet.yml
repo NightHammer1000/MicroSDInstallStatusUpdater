@@ -28,3 +28,9 @@ jobs:
       
       - name: Build solution
         run: msbuild MicroSDInstallStatusUpdater.sln -t:rebuild -property:Configuration=Release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: BUILD
+          path: "D:\a\MicroSDInstallStatusUpdater\MicroSDInstallStatusUpdater\bin\Release\"
