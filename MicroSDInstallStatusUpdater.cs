@@ -53,6 +53,7 @@ namespace MicroSDInstallStatusUpdater
         private void SDCardRemoved(object sender, EventArrivedEventArgs e)
         {
             logger.Info("[SDCardInstallStatusUpdater] SDCard Removed! Updating Database!");
+            Thread.Sleep(2000);
             foreach (var game in PlayniteApi.Database.Games)
             {
                 var InstallDir = game.InstallDirectory;
@@ -75,7 +76,7 @@ namespace MicroSDInstallStatusUpdater
         private void SDCardInserted(object sender, EventArrivedEventArgs e)
         {
             logger.Info("[SDCardInstallStatusUpdater] SDCard Inserted! Sleeping a bit to let Windows handle and mount shit :3 Updating Database!");
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             logger.Info("[SDCardInstallStatusUpdater] Sleep Done! Updating Database!");
             foreach (var game in PlayniteApi.Database.Games)
             {
