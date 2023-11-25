@@ -48,6 +48,25 @@ namespace MicroSDInstallStatusUpdater
 
             insertWatcher.Start();
             removeWatcher.Start();
+
+            logger.Info("[SDCardInstallStatusUpdater] Playnite Started! Updating Database!");
+            foreach (var game in PlayniteApi.Database.Games)
+            {
+                var InstallDir = game.InstallDirectory;
+
+                if(!Directory.Exists(InstallDir) || InstallDir == null)
+                {
+                    logger.Info("[SDCardInstallStatusUpdater] Game '" + game.Name + "' is not found anymore. Updateing Status to Uninstalled");
+                    game.IsInstalled = false;
+                    PlayniteApi.Database.Games.Update(game);
+                }
+                if (Directory.Exists(InstallDir))
+                {
+                    logger.Info("[SDCardInstallStatusUpdater] Game '" + game.Name + "' is now found!. Updateing Status to Installed");
+                    game.IsInstalled = true;
+                    PlayniteApi.Database.Games.Update(game);
+                }
+            }
         }
 
         private void SDCardRemoved(object sender, EventArrivedEventArgs e)
